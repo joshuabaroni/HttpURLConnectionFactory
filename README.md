@@ -5,8 +5,9 @@ Functional Classes for using the java.net.HttpURLConnection class provided by or
 ### GET
 ```
 HttpURLConnection conn = GetCallFactory.callWithParams(<POST call url>);
+GetCallFactory.addContentType(conn, ContentType.<your_content_type>.toString() /* or the string literal for the content type */);
 GetCallFactory.addAuthentication(conn, <username>, <password>);
-//...
+// call all features you want to add to your connection as seen above...
 String output = GetCallFactory.readResponse(conn);
   // or
 String output = GetCallFactory.getFullResponse(conn);
